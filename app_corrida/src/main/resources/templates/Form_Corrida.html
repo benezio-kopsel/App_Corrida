@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Formulario Corrida</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Cadastrar Corrida</h1>
+    <form action="#" method="POST">
+        <label for="origem">Origem:</label>
+        <input type="text" id="origem" name="origem"><br><br>
+        
+        <label for="distancia">Distância (km):</label>
+        <input type="number" step="0.01" id="distancia" name="distancia"><br><br>
+
+        <label for="valor">Valor:</label>
+        <input type="number" step="0.01" id="valor" name="valor" required><br><br>
+        
+        <label for="data_hora">Data e Hora:</label>
+        <input type="datetime-local" id="data_hora" name="data_hora" required><br><br>
+
+        <label for="motorista">Motorista:</label>
+        <select id="motorista" name="motorista" required>
+            <option value="">Selecione</option>
+            <!-- Opções preenchidas dinamicamente -->
+        </select><br><br>
+
+        <label for="aplicativo">Aplicativo:</label>
+        <select id="aplicativo" name="aplicativo" required>
+            <option value="">Selecione</option>
+            <!-- Opções preenchidas dinamicamente -->
+        </select><br><br>
+
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>
