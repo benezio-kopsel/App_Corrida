@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Cadastrar Aplicativo</h1>
-    <form action="#" method="POST">
+    <form th:action="@{/aplicativo}" method="post" th:object="${aplicativo}">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 

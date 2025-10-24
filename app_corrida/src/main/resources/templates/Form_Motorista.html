@@ -6,7 +6,8 @@
 </head>
 <body>
     <h1>Cadastrar Motorista</h1>
-    <form action="#" method="POST">
+    <form th:action="@{/motorista}" method="post" th:object="${motorista}">
+
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 

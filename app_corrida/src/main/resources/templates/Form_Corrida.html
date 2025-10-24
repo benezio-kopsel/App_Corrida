@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Cadastrar Corrida</h1>
-    <form action="#" method="POST">
+    <form th:action="@{/corrida}" method="post" th:object="${corrida}">
         <label for="origem">Origem:</label>
         <input type="text" id="origem" name="origem"><br><br>
         

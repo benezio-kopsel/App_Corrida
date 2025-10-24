@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
-    <title>Aplicativo</title>
+    <title>Motoristas</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <h1>Lista de Aplicativos</h1>
+    <h1>Lista de Motoristas</h1>
+
     <table border="1">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Nome</th>
-                <th>Versão</th>
-                <th>Contato de Suporte</th>
+                <th>CNH</th>
+                <th>Corridas</th>
+                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
-            <!-- Linhas preenchidas dinamicamente -->
+            <!-- ⚡ Aqui percorremos a lista de motoristas -->
+            <tr th:each="m : ${motorista}">
+                <td th:text="${m.id}"></td>
+                <td th:text="${m.nome}"></td>
+                <td th:text="${m.cnh}"></td>
+                <td th:text="${#lists.isEmpty(m.corridas) ? 'Sem corridas' : m.corridas.size()}"></td>
+                <td>
+                    <a th:href="@{/motorista/{id}/editar(id=${m.id})}">Editar</a> |
+                    <a th:href="@{/motorista/{id}/deletar(id=${m.id})}">Deletar</a>
+                </td>
+            </tr>
         </tbody>
     </table>
+
+    <a href="/motorista/novo">Cadastrar Novo Motorista</a>
+    <br>
     <a href="/">Home</a>
 </body>
 </html>
